@@ -88,7 +88,9 @@ class LoginSignUp extends StatelessWidget {
                     height: 20.w,
                   ),
                   CustomButton(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/login');
+                      },
                       buttonText: 'Login',
                       style: TextStyle(
                         fontSize: 16.sp,

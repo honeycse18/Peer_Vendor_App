@@ -134,7 +134,7 @@ class _OnboardingState extends State<Onboarding> {
                     setState(() {});
                     currentIndex++;
                   } else
-                    Navigator.pushNamed(context, '/login');
+                    Navigator.pushNamed(context, '/loginSignup');
                 },
 
                 buttonText: 'NEXT',

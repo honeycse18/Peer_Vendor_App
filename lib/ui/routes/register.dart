@@ -29,7 +29,7 @@ class _RegisterState extends State<Register> {
       child: SafeArea(
         child: Scaffold(
             body: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(20.0),
           child: Column(
             children: [
               SizedBox(
@@ -42,7 +42,7 @@ class _RegisterState extends State<Register> {
                   backgroundColor: Colors.grey,
                   child: IconButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/loginSignup');
                       },
                       icon: Icon(
                         Icons.arrow_back,
@@ -112,8 +112,6 @@ class _RegisterState extends State<Register> {
                                   Container(
                                     child: TextField(
                                       controller: _nameController,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
                                       decoration: InputDecoration(
                                         hintText: 'Full Name',
                                         hintStyle: TextStyle(
@@ -129,8 +127,6 @@ class _RegisterState extends State<Register> {
                                   Container(
                                     child: TextField(
                                       controller: _numberController,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
                                       decoration: InputDecoration(
                                         hintText: 'Phone Number',
                                         hintStyle: TextStyle(
@@ -174,7 +170,9 @@ class _RegisterState extends State<Register> {
                                     height: 50.h,
                                   ),
                                   CustomButton(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.pushNamed(context, '/otp');
+                                    },
                                     buttonText: 'Continues',
                                     style: TextStyle(
                                       color: Colors.white,
@@ -252,8 +250,6 @@ class _RegisterState extends State<Register> {
                                   Container(
                                     child: TextField(
                                       controller: _nameController,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
                                       decoration: InputDecoration(
                                         hintText: 'Full Name',
                                         hintStyle: TextStyle(
@@ -269,8 +265,6 @@ class _RegisterState extends State<Register> {
                                   Container(
                                     child: TextField(
                                       controller: _emailController,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
                                       decoration: InputDecoration(
                                         hintText: 'Email Address',
                                         hintStyle: TextStyle(
@@ -314,7 +308,9 @@ class _RegisterState extends State<Register> {
                                     height: 50.h,
                                   ),
                                   CustomButton(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.pushNamed(context, '/otp');
+                                    },
                                     buttonText: 'Continues',
                                     style: TextStyle(
                                       color: Colors.white,

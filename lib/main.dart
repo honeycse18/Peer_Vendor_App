@@ -4,8 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:peer_vendors/ui/routes/language_select.dart';
+import 'package:peer_vendors/ui/routes/login.dart';
 import 'package:peer_vendors/ui/routes/login_signup.dart';
+import 'package:peer_vendors/ui/routes/nav_bar/bottom_nav_controller.dart';
+import 'package:peer_vendors/ui/routes/otp_page.dart';
 import 'package:peer_vendors/ui/routes/register.dart';
+import 'package:peer_vendors/ui/routes/well_done.dart';
 
 import 'ui/routes/onboarding.dart';
 
@@ -28,10 +32,11 @@ class MyApp extends StatelessWidget {
             '/onboarding': (_) => Onboarding(),
             '/radiobutton': (_) => RadiButtonScreen(),
             '/register': (_) => Register(),
-            '/login': (_) => LoginSignUp(),
-
-            // '/dashboard': (_) => DashBoard(),
-            // '/bottomNavBar': (_) => BottomNavController(),
+            '/login': (_) => login(),
+            '/loginSignup': (_) => LoginSignUp(),
+            '/otp': (_) => Otp_Page(),
+            '/weldone': (_) => WellDone(),
+            '/bottomNavBar': (_) => Bottom_Nav_Controller(),
           },
           initialRoute: '/splash',
         );
