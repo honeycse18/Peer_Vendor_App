@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../const/colors.dart';
+import '../widgets/button.dart';
 
 class RadiButtonScreen extends StatefulWidget {
   const RadiButtonScreen({super.key});
@@ -31,7 +32,7 @@ class _RadiButtonScreenState extends State<RadiButtonScreen> {
                 clipBehavior: Clip.none,
                 children: [
                   Container(
-                    height: 300.h,
+                    height: 400.h,
                     width: 300.w,
                     decoration: BoxDecoration(
                         color: AppColor.light_pink,
@@ -78,6 +79,29 @@ class _RadiButtonScreenState extends State<RadiButtonScreen> {
                                 ],
                               ),
                             ),
+                          SizedBox(
+                            height: 50.h,
+                          ),
+                          CustomButton(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/onboarding');
+                            },
+                            buttonText: 'Continues',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            borderColor: Colors.blue,
+                            textColor: Colors.white,
+                            topright: 10.0,
+                            topleft: 10.0,
+                            bottomleft: 10.0,
+                            bottomright: 10.0,
+                            height: 40.h,
+                            width: 150.w,
+                            buttonColor: AppColor.purple,
+                          ),
                         ],
                       ),
                     ),

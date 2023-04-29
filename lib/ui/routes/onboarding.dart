@@ -108,11 +108,7 @@ class _OnboardingState extends State<Onboarding> {
             children: [
               CustomButton(
                 onTap: () {
-                  if (currentIndex < 2) {
-                    setState(() {});
-                    currentIndex++;
-                  } else
-                    Navigator.pushNamed(context, '/login');
+                  Navigator.pushNamed(context, '/bottomNavBar');
                 },
 
                 buttonText: 'SKIP',
@@ -124,8 +120,8 @@ class _OnboardingState extends State<Onboarding> {
                 topright: 40.0,
                 bottomleft: 0.0,
                 bottomright: 0.0,
-                height: 70,
-                width: 205,
+                height: 70.h,
+                width: 170.w,
                 // BorderRadius: 10,
               ),
               CustomButton(
@@ -145,7 +141,7 @@ class _OnboardingState extends State<Onboarding> {
                 bottomleft: 0.0,
                 bottomright: 0.0,
                 topleft: 40.0,
-                topright: 0.0, height: 70, width: 205,
+                topright: 0.0, height: 70.h, width: 170.w,
                 // BorderRadius: 10,
               ),
             ],

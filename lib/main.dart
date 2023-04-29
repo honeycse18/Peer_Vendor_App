@@ -7,6 +7,9 @@ import 'package:peer_vendors/ui/routes/language_select.dart';
 import 'package:peer_vendors/ui/routes/login.dart';
 import 'package:peer_vendors/ui/routes/login_signup.dart';
 import 'package:peer_vendors/ui/routes/nav_bar/bottom_nav_controller.dart';
+import 'package:peer_vendors/ui/routes/nav_bar/choose_image.dart';
+import 'package:peer_vendors/ui/routes/nav_bar/product_details.dart';
+import 'package:peer_vendors/ui/routes/nav_bar/sub_category.dart';
 import 'package:peer_vendors/ui/routes/otp_page.dart';
 import 'package:peer_vendors/ui/routes/register.dart';
 import 'package:peer_vendors/ui/routes/well_done.dart';
@@ -37,6 +40,9 @@ class MyApp extends StatelessWidget {
             '/otp': (_) => Otp_Page(),
             '/weldone': (_) => WellDone(),
             '/bottomNavBar': (_) => Bottom_Nav_Controller(),
+            '/subcategory': (_) => SubCategory(),
+            '/productDetails': (_) => ProductDetails(),
+            '/chooseImage':(_)=>ChooseImage(),
           },
           initialRoute: '/splash',
         );
@@ -60,7 +66,7 @@ class _SplashState extends State<Splash> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.push(
-            context, CupertinoPageRoute(builder: (_) => Onboarding())));
+            context, CupertinoPageRoute(builder: (_) => RadiButtonScreen())));
   }
 
   @override

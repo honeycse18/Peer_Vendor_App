@@ -6,20 +6,19 @@ import '../../const/colors.dart';
 import '../../widgets/button.dart';
 import '../language_select.dart';
 
-class Account extends StatefulWidget {
-  const Account({super.key});
+class SubCategory extends StatefulWidget {
+  const SubCategory({super.key});
 
   @override
-  State<Account> createState() => _AccountState();
+  State<SubCategory> createState() => _SubCategoryState();
 }
 
-class _AccountState extends State<Account> {
-  String current_value = 'Edit Profile';
+class _SubCategoryState extends State<SubCategory> {
+  String current_value = 'Cars';
   List<String> Language = [
-    'Edit Profile',
-    'Language',
-    'Logout',
-    'Deactivate Account',
+    'Cars',
+    'Bike',
+    'Bicycle',
   ];
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class _AccountState extends State<Account> {
         backgroundColor: Colors.white,
         title: Center(
           child: Text(
-            "Settings",
+            "Sell",
             style: TextStyle(color: Colors.black, fontSize: 30.sp),
           ),
         ),
@@ -40,6 +39,19 @@ class _AccountState extends State<Account> {
             padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
             child: Column(
               children: [
+                Container(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    "Choose a Category",
+                    style: TextStyle(
+                        color: AppColor.deep_grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
                 for (int i = 0; i < Language.length; i++)
                   Column(
                     children: [
@@ -78,7 +90,7 @@ class _AccountState extends State<Account> {
                 ),
                 CustomButton(
                   onTap: () {
-                    Navigator.pushNamed(context, '/splash');
+                    Navigator.pushNamed(context, '/productDetails');
                   },
                   buttonText: 'Continues',
                   style: TextStyle(

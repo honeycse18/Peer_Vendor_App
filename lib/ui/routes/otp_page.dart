@@ -27,75 +27,78 @@ class _Otp_PageState extends State<Otp_Page> {
         child: Scaffold(
             body: Padding(
           padding: EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            //  crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/logos/logo.png',
-                height: 130.h,
-                width: 130.w,
-              ),
-              SizedBox(
-                height: 50.h,
-              ),
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: EdgeInsets.all(30.0),
-                        child: Column(
-                          //mainAxisAlignment: MainAxisAlignment.center,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              child: TextField(
-                                controller: _numberController,
-                                decoration: InputDecoration(
-                                  hintText: 'Enter 6 digit OTP Code',
-                                  hintStyle: TextStyle(
-                                    fontSize: 18.sp,
-                                    color: Colors.grey,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              //  crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logos/logo.png',
+                  height: 130.h,
+                  width: 130.w,
+                ),
+                SizedBox(
+                  height: 50.h,
+                ),
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: EdgeInsets.all(30.0),
+                          child: Column(
+                            //mainAxisAlignment: MainAxisAlignment.center,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                child: TextField(
+                                  controller: _numberController,
+                                  decoration: InputDecoration(
+                                    hintText: 'Enter 6 digit OTP Code',
+                                    hintStyle: TextStyle(
+                                      fontSize: 18.sp,
+                                      color: Colors.grey,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 50.h,
-                            ),
-                            CustomButton(
-                              onTap: () {
-                                Navigator.pushNamed(context, '/weldone');
-                              },
-                              buttonText: 'Continues',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
+                              SizedBox(
+                                height: 50.h,
                               ),
-                              borderColor: Colors.blue,
-                              textColor: Colors.white,
-                              topright: 10.0,
-                              topleft: 10.0,
-                              bottomleft: 10.0,
-                              bottomright: 10.0,
-                              height: 55.h,
-                              width: 320.w,
-                              buttonColor: AppColor.purple,
-                            ),
-                            SizedBox(
-                              height: 50.h,
-                            ),
-                          ],
+                              CustomButton(
+                                onTap: () {
+                                  Navigator.pushNamed(context, '/weldone');
+                                },
+                                buttonText: 'Continues',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                borderColor: Colors.blue,
+                                textColor: Colors.white,
+                                topright: 10.0,
+                                topleft: 10.0,
+                                bottomleft: 10.0,
+                                bottomright: 10.0,
+                                height: 55.h,
+                                width: 320.w,
+                                buttonColor: AppColor.purple,
+                              ),
+                              SizedBox(
+                                height: 50.h,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         )),
       ),
