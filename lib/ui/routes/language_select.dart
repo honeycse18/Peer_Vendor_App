@@ -39,7 +39,7 @@ class _RadiButtonScreenState extends State<RadiButtonScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding:
-                          const EdgeInsets.only(top: 60, left: 30, right: 20),
+                          const EdgeInsets.only(top: 80, left: 20, right: 20),
                       child: Column(
                         children: [
                           Text(
@@ -47,10 +47,10 @@ class _RadiButtonScreenState extends State<RadiButtonScreen> {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 22),
+                                fontSize: 18),
                           ),
                           SizedBox(
-                            height: 30.h,
+                            height: 20.h,
                           ),
                           for (int i = 0; i < Language.length; i++)
                             Padding(
@@ -67,20 +67,20 @@ class _RadiButtonScreenState extends State<RadiButtonScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 10.0,
+                                    width: 0.0,
                                   ),
                                   Text(
                                     Language[i],
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 20),
+                                        fontSize: 16),
                                   ),
                                 ],
                               ),
                             ),
                           SizedBox(
-                            height: 50.h,
+                            height: 40.h,
                           ),
                           CustomButton(
                             onTap: () {

@@ -1,15 +1,26 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:peer_vendors/ui/const/colors.dart';
 import 'package:peer_vendors/ui/widgets/text_field.dart';
 
 import '../../widgets/button.dart';
 
-class ChooseImage extends StatelessWidget {
+class ChooseImage extends StatefulWidget {
   ChooseImage({super.key});
+
+  @override
+  State<ChooseImage> createState() => _ChooseImageState();
+}
+
+class _ChooseImageState extends State<ChooseImage> {
   int current_index = 0;
+
   List products = [
     Image.asset('assets/images/image 15.png'),
     Image.asset('assets/images/image 15.png'),
@@ -18,6 +29,20 @@ class ChooseImage extends StatelessWidget {
     Image.asset('assets/images/image 15.png'),
     Image.asset('assets/images/image 15.png'),
   ];
+
+  File? _selectedImage;
+  Uint8List? _image;
+
+  Future _pickImage() async {
+    final returnedImage =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (returnedImage == null) return;
+    setState() {
+      _selectedImage = File(returnedImage.path);
+      _image = File(returnedImage.path).readAsBytesSync();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +91,9 @@ class ChooseImage extends StatelessWidget {
                       color: AppColor.light_pink,
                       iconSize: 40.0,
                       hoverColor: Colors.grey,
-                      onPressed: () {},
+                      onPressed: () {
+                        _pickImage();
+                      },
                     )),
               ),
               SizedBox(

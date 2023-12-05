@@ -24,21 +24,22 @@ class _HomePageState extends State<HomePage> {
         //   Icons.location_on,
         //   color: AppColor.light_pink,
         // ),
-        backgroundColor: Colors.grey,
+        backgroundColor: Color.fromARGB(255, 218, 216, 216),
         title: Text(
           'Rahim Nagar, Khulna',
-          style: TextStyle(color: AppColor.deep_grey),
+          style: TextStyle(color: AppColor.deep_grey, fontSize: 15.sp),
         ),
         actions: [
           CircleAvatar(
-            radius: 14.r,
+            radius: 12.r,
             backgroundColor: AppColor.deep_grey,
             child: CircleAvatar(
-              radius: 12.r,
+              radius: 10.r,
               backgroundColor: Colors.white,
               child: Icon(
                 Icons.question_mark,
                 color: AppColor.deep_grey,
+                size: 15.0,
               ),
             ),
           ),
@@ -85,35 +86,37 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   children: [
                     Container(
-                      height: 40.h,
-                      width: 140.w,
+                      height: 32.h,
+                      width: 145.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
+                        borderRadius: BorderRadius.circular(10.0),
                         color: Colors.grey,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(11.0),
+                        padding: const EdgeInsets.all(5.0),
                         child: Text(
                           "Cars, Bikes, Bicycles",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 12.sp),
                         ),
                       ),
                     ),
                     SizedBox(
-                      width: 20.w,
+                      width: 10.w,
                     ),
                     Container(
-                      height: 40.h,
-                      width: 165.w,
+                      height: 32.h,
+                      width: 175.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
+                        borderRadius: BorderRadius.circular(10.0),
                         color: Colors.grey,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(11.0),
+                        padding: const EdgeInsets.all(5.0),
                         child: Text(
                           "Electronics & Appliances",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 12.sp),
                         ),
                       ),
                     ),
@@ -213,8 +216,8 @@ class _HomePageState extends State<HomePage> {
                       width: 380.w,
                       padding: EdgeInsets.only(
                         top: 30,
-                        left: 10,
-                        right: 10,
+                        left: 5,
+                        right: 5,
                       ),
                       child: Stack(
                         clipBehavior: Clip.none,
@@ -243,7 +246,7 @@ class _HomePageState extends State<HomePage> {
                                       'Fix My Location Problem',
                                       style: TextStyle(
                                         color: AppColor.light_pink,
-                                        fontSize: 15.sp,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -262,14 +265,14 @@ class _HomePageState extends State<HomePage> {
                                       'How To Use This App',
                                       style: TextStyle(
                                         color: AppColor.light_pink,
-                                        fontSize: 15.sp,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 12.h,
                                 ),
                                 Row(
                                   children: [
@@ -284,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                                       'Contact Us for Location',
                                       style: TextStyle(
                                         color: AppColor.light_pink,
-                                        fontSize: 15.sp,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -297,12 +300,14 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Positioned(
-                              top: -40,
+                              top: -50,
                               right: -20,
                               child: CircleAvatar(
                                   backgroundColor: Colors.grey,
                                   child: IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
                                       icon: Icon(
                                         Icons.close,
                                         color: Colors.black,
@@ -342,13 +347,11 @@ class NavigationDrawer extends StatelessWidget {
         child: InkWell(
           onTap: () {},
           child: Container(
-            padding: EdgeInsets.only(
-              top: 24,
-            ),
+            padding: EdgeInsets.all(24),
             child: Column(
               children: const [
                 SizedBox(
-                  height: 50,
+                  height: 40,
                 ),
                 CircleAvatar(
                   radius: 52,

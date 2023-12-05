@@ -65,13 +65,13 @@ class _RegisterState extends State<Register> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 50.h,
+                height: 30.h,
               ),
               Container(
-                width: 200.w,
+                width: 170.w,
                 height: 35.h,
                 decoration: BoxDecoration(
-                    color: Colors.grey[300],
+                    color: Color.fromARGB(255, 228, 227, 227),
                     borderRadius: BorderRadius.circular(10.0)),
                 child: TabBar(
                   indicator: BoxDecoration(
@@ -90,284 +90,292 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               SizedBox(
-                height: 50.h,
+                height: 30.h,
               ),
               Expanded(
                   child: TabBarView(
                 children: [
                   Center(
-                    child: Container(
-                      width: double.infinity,
-                      height: 550.h,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Padding(
-                              padding: EdgeInsets.all(20.0),
-                              child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.center,
-                                // crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    child: TextField(
-                                      controller: _nameController,
-                                      decoration: InputDecoration(
-                                        hintText: 'Full Name',
-                                        hintStyle: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Container(
-                                    child: TextField(
-                                      controller: _numberController,
-                                      decoration: InputDecoration(
-                                        hintText: 'Phone Number',
-                                        hintStyle: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  DropdownButtonFormField(
-                                      value: valueChoose,
-                                      items: [
-                                        DropdownMenuItem(
-                                          child: Text(
-                                            "Select Your Country",
-                                            style: TextStyle(
-                                              fontSize: 18.sp,
-                                              color: Colors.grey,
-                                            ),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Container(
+                        width: double.infinity,
+                        height: 550.h,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Padding(
+                                padding: EdgeInsets.all(20.0),
+                                child: Column(
+                                  //mainAxisAlignment: MainAxisAlignment.center,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      child: TextField(
+                                        controller: _nameController,
+                                        decoration: InputDecoration(
+                                          hintText: 'Full Name',
+                                          hintStyle: TextStyle(
+                                            fontSize: 18.sp,
+                                            color: Colors.grey,
                                           ),
-                                          value: "-1",
                                         ),
-                                        DropdownMenuItem(
-                                          child: Text("America"),
-                                          value: "1",
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 30.h,
+                                    ),
+                                    Container(
+                                      child: TextField(
+                                        controller: _numberController,
+                                        decoration: InputDecoration(
+                                          hintText: 'Phone Number',
+                                          hintStyle: TextStyle(
+                                            fontSize: 18.sp,
+                                            color: Colors.grey,
+                                          ),
                                         ),
-                                        DropdownMenuItem(
-                                          child: Text("Bangladesh"),
-                                          value: "2",
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 30.h,
+                                    ),
+                                    DropdownButtonFormField(
+                                        value: valueChoose,
+                                        items: [
+                                          DropdownMenuItem(
+                                            child: Text(
+                                              "Select Your Country",
+                                              style: TextStyle(
+                                                fontSize: 18.sp,
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                            value: "-1",
+                                          ),
+                                          DropdownMenuItem(
+                                            child: Text("America"),
+                                            value: "1",
+                                          ),
+                                          DropdownMenuItem(
+                                            child: Text("Bangladesh"),
+                                            value: "2",
+                                          ),
+                                          DropdownMenuItem(
+                                            child: Text("Canada"),
+                                            value: "3",
+                                          ),
+                                        ],
+                                        onChanged: (v) {}),
+                                    SizedBox(
+                                      height: 50.h,
+                                    ),
+                                    CustomButton(
+                                      onTap: () {
+                                        Navigator.pushNamed(context, '/otp');
+                                      },
+                                      buttonText: 'Continues',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      borderColor: Colors.blue,
+                                      textColor: Colors.white,
+                                      topright: 10.0,
+                                      topleft: 10.0,
+                                      bottomleft: 10.0,
+                                      bottomright: 10.0,
+                                      height: 55.h,
+                                      width: 320.w,
+                                      buttonColor: AppColor.purple,
+                                    ),
+                                    SizedBox(
+                                      height: 50.h,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          child: Text(
+                                            "Already Have An Account? ",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey[600],
+                                                fontSize: 16.sp),
+                                          ),
                                         ),
-                                        DropdownMenuItem(
-                                          child: Text("Canada"),
-                                          value: "3",
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          child: GestureDetector(
+                                            onTap: () => Navigator.pushNamed(
+                                                context, '/loginpage'),
+                                            child: RichText(
+                                                text: TextSpan(children: [
+                                              TextSpan(
+                                                text: 'Login',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.blue,
+                                                    fontSize: 16.sp),
+                                              )
+                                            ])),
+                                          ),
                                         ),
                                       ],
-                                      onChanged: (v) {}),
-                                  SizedBox(
-                                    height: 50.h,
-                                  ),
-                                  CustomButton(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, '/otp');
-                                    },
-                                    buttonText: 'Continues',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.bold,
                                     ),
-                                    borderColor: Colors.blue,
-                                    textColor: Colors.white,
-                                    topright: 10.0,
-                                    topleft: 10.0,
-                                    bottomleft: 10.0,
-                                    bottomright: 10.0,
-                                    height: 55.h,
-                                    width: 320.w,
-                                    buttonColor: AppColor.purple,
-                                  ),
-                                  SizedBox(
-                                    height: 50.h,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        child: Text(
-                                          "Already Have An Account? ",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.grey[600],
-                                              fontSize: 16.sp),
-                                        ),
-                                      ),
-                                      Container(
-                                        alignment: Alignment.bottomCenter,
-                                        child: GestureDetector(
-                                          onTap: () => Navigator.pushNamed(
-                                              context, '/login'),
-                                          child: RichText(
-                                              text: TextSpan(children: [
-                                            TextSpan(
-                                              text: 'Login',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.blue,
-                                                  fontSize: 16.sp),
-                                            )
-                                          ])),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Center(
-                    child: Container(
-                      width: double.infinity,
-                      height: 550.h,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Padding(
-                              padding: EdgeInsets.all(20.0),
-                              child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.center,
-                                // crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    child: TextField(
-                                      controller: _nameController,
-                                      decoration: InputDecoration(
-                                        hintText: 'Full Name',
-                                        hintStyle: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Container(
-                                    child: TextField(
-                                      controller: _emailController,
-                                      decoration: InputDecoration(
-                                        hintText: 'Email Address',
-                                        hintStyle: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  DropdownButtonFormField(
-                                      value: valueChoose,
-                                      items: [
-                                        DropdownMenuItem(
-                                          child: Text(
-                                            "Select Your Country",
-                                            style: TextStyle(
-                                              fontSize: 18.sp,
-                                              color: Colors.grey,
-                                            ),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Container(
+                        width: double.infinity,
+                        height: 550.h,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Padding(
+                                padding: EdgeInsets.all(20.0),
+                                child: Column(
+                                  //mainAxisAlignment: MainAxisAlignment.center,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      child: TextField(
+                                        controller: _nameController,
+                                        decoration: InputDecoration(
+                                          hintText: 'Full Name',
+                                          hintStyle: TextStyle(
+                                            fontSize: 18.sp,
+                                            color: Colors.grey,
                                           ),
-                                          value: "-1",
                                         ),
-                                        DropdownMenuItem(
-                                          child: Text("America"),
-                                          value: "1",
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 30.h,
+                                    ),
+                                    Container(
+                                      child: TextField(
+                                        controller: _emailController,
+                                        decoration: InputDecoration(
+                                          hintText: 'Email Address',
+                                          hintStyle: TextStyle(
+                                            fontSize: 18.sp,
+                                            color: Colors.grey,
+                                          ),
                                         ),
-                                        DropdownMenuItem(
-                                          child: Text("Bangladesh"),
-                                          value: "2",
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 30.h,
+                                    ),
+                                    DropdownButtonFormField(
+                                        value: valueChoose,
+                                        items: [
+                                          DropdownMenuItem(
+                                            child: Text(
+                                              "Select Your Country",
+                                              style: TextStyle(
+                                                fontSize: 18.sp,
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                            value: "-1",
+                                          ),
+                                          DropdownMenuItem(
+                                            child: Text("America"),
+                                            value: "1",
+                                          ),
+                                          DropdownMenuItem(
+                                            child: Text("Bangladesh"),
+                                            value: "2",
+                                          ),
+                                          DropdownMenuItem(
+                                            child: Text("Canada"),
+                                            value: "3",
+                                          ),
+                                        ],
+                                        onChanged: (v) {}),
+                                    SizedBox(
+                                      height: 50.h,
+                                    ),
+                                    CustomButton(
+                                      onTap: () {
+                                        Navigator.pushNamed(context, '/otp');
+                                      },
+                                      buttonText: 'Continues',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      borderColor: Colors.blue,
+                                      textColor: Colors.white,
+                                      topright: 10.0,
+                                      topleft: 10.0,
+                                      bottomleft: 10.0,
+                                      bottomright: 10.0,
+                                      height: 55.h,
+                                      width: 320.w,
+                                      buttonColor: AppColor.purple,
+                                    ),
+                                    SizedBox(
+                                      height: 50.h,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          child: Text(
+                                            "Already Have An Account? ",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey[600],
+                                                fontSize: 16.sp),
+                                          ),
                                         ),
-                                        DropdownMenuItem(
-                                          child: Text("Canada"),
-                                          value: "3",
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          child: GestureDetector(
+                                            onTap: () => Navigator.pushNamed(
+                                                context, '/loginpage'),
+                                            child: RichText(
+                                                text: TextSpan(children: [
+                                              TextSpan(
+                                                text: 'Login',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.blue,
+                                                    fontSize: 16.sp),
+                                              )
+                                            ])),
+                                          ),
                                         ),
                                       ],
-                                      onChanged: (v) {}),
-                                  SizedBox(
-                                    height: 50.h,
-                                  ),
-                                  CustomButton(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, '/otp');
-                                    },
-                                    buttonText: 'Continues',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.bold,
                                     ),
-                                    borderColor: Colors.blue,
-                                    textColor: Colors.white,
-                                    topright: 10.0,
-                                    topleft: 10.0,
-                                    bottomleft: 10.0,
-                                    bottomright: 10.0,
-                                    height: 55.h,
-                                    width: 320.w,
-                                    buttonColor: AppColor.purple,
-                                  ),
-                                  SizedBox(
-                                    height: 50.h,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        child: Text(
-                                          "Already Have An Account? ",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.grey[600],
-                                              fontSize: 16.sp),
-                                        ),
-                                      ),
-                                      Container(
-                                        alignment: Alignment.bottomCenter,
-                                        child: GestureDetector(
-                                          onTap: () => Navigator.pushNamed(
-                                              context, '/login'),
-                                          child: RichText(
-                                              text: TextSpan(children: [
-                                            TextSpan(
-                                              text: 'Login',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.blue,
-                                                  fontSize: 16.sp),
-                                            )
-                                          ])),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

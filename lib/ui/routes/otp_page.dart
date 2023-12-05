@@ -31,8 +31,11 @@ class _Otp_PageState extends State<Otp_Page> {
             scrollDirection: Axis.vertical,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              //  crossAxisAlignment: CrossAxisAlignment.center,
+              //crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: 110.h,
+                ),
                 Image.asset(
                   'assets/logos/logo.png',
                   height: 130.h,

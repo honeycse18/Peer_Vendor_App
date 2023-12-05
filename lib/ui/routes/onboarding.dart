@@ -66,25 +66,22 @@ class _OnboardingState extends State<Onboarding> {
               activeColor: Color.fromARGB(255, 226, 87, 82),
             ),
           ),
-          SizedBox(
-            height: 20.h,
-          ),
           Expanded(
             child: Container(
               width: double.maxFinite,
               child: Padding(
-                padding: EdgeInsets.only(top: 40, left: 35, right: 35),
+                padding: EdgeInsets.only(top: 10, left: 35, right: 35),
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 30.h,
+                      height: 20.h,
                     ),
                     Text(
                       items[currentIndex]['title'],
                       style: TextStyle(
                           color: AppColor.deep_grey,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25.sp),
+                          fontSize: 23.sp),
                     ),
                     SizedBox(
                       height: 30.h,

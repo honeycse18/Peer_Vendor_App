@@ -29,6 +29,7 @@ class MyAds extends StatelessWidget {
               'My Ads',
               style: TextStyle(
                 color: Colors.black,
+                fontSize: 30.sp,
               ),
             ),
           ),
@@ -41,25 +42,31 @@ class MyAds extends StatelessWidget {
             indicatorWeight: 3,
             tabs: [
               Tab(
-                child: Column(
-                  children: [
-                    Icon(Icons.shopping_basket),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Text('My Ads')
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: Row(
+                    children: [
+                      Icon(Icons.shopping_basket),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      Text('My Ads')
+                    ],
+                  ),
                 ),
               ),
               Tab(
-                child: Column(
-                  children: [
-                    Icon(Icons.favorite_outline),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Text('My Favourite')
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Row(
+                    children: [
+                      Icon(Icons.favorite_outline),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text('My Favourite')
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -94,7 +101,7 @@ class MyAds extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 10,
-                              vertical: 20,
+                              //  vertical: 20,
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +136,7 @@ class MyAds extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: -50,
+                            top: -30,
                             right: 30,
                             left: 30,
                             child: Center(

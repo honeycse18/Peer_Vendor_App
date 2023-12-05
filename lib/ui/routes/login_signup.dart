@@ -91,7 +91,9 @@ class LoginSignUp extends StatelessWidget {
                     ),
                     CustomButton(
                         onTap: () {
-                          Navigator.pushNamed(context, '/login');
+                          Navigator.pushNamed(context, '/loginpage');
+
+                          //Navigator.pushNamed(context, '/login');
                         },
                         buttonText: 'Login',
                         style: TextStyle(
